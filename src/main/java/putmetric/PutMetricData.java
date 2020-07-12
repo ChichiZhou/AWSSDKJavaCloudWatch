@@ -28,16 +28,19 @@ public class PutMetricData {
         final AmazonCloudWatch cw =
                 AmazonCloudWatchClientBuilder.defaultClient();
 
+        // 这个是具体的 dimension
         Dimension dimension = new Dimension()
                 .withName("UNIQUE_PAGES")
                 .withValue("URLS");
 
+        // 这个是具体的 metrci 的name
         MetricDatum datum = new MetricDatum()
                 .withMetricName("PAGES_VISITED")
                 .withUnit(StandardUnit.None)
                 .withValue(data_point)
                 .withDimensions(dimension);
 
+        // 这里的 NameSpace 就是第一个出现在 Metric 界面的
         PutMetricDataRequest request = new PutMetricDataRequest()
                 .withNamespace("SITE/TRAFFIC")
                 .withMetricData(datum);
