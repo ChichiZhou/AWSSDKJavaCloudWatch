@@ -31,8 +31,12 @@ public class ListMetrics {
 //        String name = args[0];
         String namespace = args[0];
 
+        // 这里是用 defaultClient
         final AmazonCloudWatch cw =
                 AmazonCloudWatchClientBuilder.defaultClient();
+
+        // 如何用这个 getCredentialsProvider ?
+        //final AmazonCloudWatch cw = AmazonCloudWatchClientBuilder.standard().withCredentials(getCredentialsProvider());
 
 //        ListMetricsRequest request = new ListMetricsRequest()
 //                .withMetricName(name)

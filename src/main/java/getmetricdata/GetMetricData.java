@@ -3,6 +3,7 @@ package getmetricdata;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.cloudwatch.AmazonCloudWatch;
 import com.amazonaws.services.cloudwatch.AmazonCloudWatchClient;
+import com.amazonaws.services.cloudwatch.AmazonCloudWatchClientBuilder;
 import com.amazonaws.services.cloudwatch.model.GetMetricDataResult;
 import com.amazonaws.services.cloudwatch.model.Metric;
 import com.amazonaws.services.cloudwatch.model.MetricStat;
