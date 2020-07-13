@@ -27,7 +27,7 @@ public class PutCloudWatchAlarm {
                 AmazonCloudWatchClientBuilder.defaultClient();
 
         Dimension dimension = new Dimension()
-                .withName("InstanceId")
+                .withName("TEST1")
                 .withValue(instanceId);
 
         PutMetricAlarmRequest request = new PutMetricAlarmRequest()
@@ -35,8 +35,8 @@ public class PutCloudWatchAlarm {
                 .withComparisonOperator(
                         ComparisonOperator.GreaterThanThreshold)
                 .withEvaluationPeriods(1)
-                .withMetricName("CPUUtilization")
-                .withNamespace("AWS/EC2")
+                .withMetricName("PAGES_VISITED")
+                .withNamespace("SITE/TRAFFIC")
                 .withPeriod(60)
                 .withStatistic(Statistic.Average)
                 .withThreshold(70.0)

@@ -19,19 +19,26 @@ public class ListMetrics {
                 "To run this example, supply a metric name and metric namespace\n" +
                         "Ex: ListMetrics <metric-name> <metric-namespace>\n";
 
-        if (args.length != 2) {
+//        if (args.length != 2) {
+//            System.out.println(USAGE);
+//            System.exit(1);
+//        }
+        if (args.length != 1) {
             System.out.println(USAGE);
             System.exit(1);
         }
 
-        String name = args[0];
-        String namespace = args[1];
+//        String name = args[0];
+        String namespace = args[0];
 
         final AmazonCloudWatch cw =
                 AmazonCloudWatchClientBuilder.defaultClient();
 
+//        ListMetricsRequest request = new ListMetricsRequest()
+//                .withMetricName(name)
+//                .withNamespace(namespace);
+
         ListMetricsRequest request = new ListMetricsRequest()
-                .withMetricName(name)
                 .withNamespace(namespace);
 
         boolean done = false;
